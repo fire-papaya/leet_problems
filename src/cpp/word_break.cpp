@@ -1,0 +1,33 @@
+#include <string>
+#include <vector>
+#include <iostream>
+
+using namespace std;
+
+class Solution {
+public:
+    bool wordBreak(string s, vector<string>& wordDict) {
+        vector<bool> dp(s.size() + 1, false);
+        dp[0] = true;
+
+        for (int i = 1; i <= s.size(); i++) {
+            for (const string& w : wordDict) {
+                int start = i - w.length();
+                if (start >= 0 && dp[start] && s.substr(start, w.length()) == w) {
+                    dp[i] = true;
+                    break;
+                }
+            }
+        }
+        return dp[s.size()];
+    }
+};
+
+
+int main() {
+    string s = "catsanddogs";
+
+    vector<string> dict = {"cats", "dogs", "and", "sand"};
+    Solution sol;
+    std::cout << sol.wordBreak(s, dict) << std::endl;
+}
