@@ -28,9 +28,3 @@ class PrefixSuffixDelete {
         return 0
     }
 }
-
-fun main() {
-    val a = arrayOf("tom", "jerry").map { Pair(it, 1) }.groupBy { it }
-    a.sort()
-    println(a.joinToString())
-}
