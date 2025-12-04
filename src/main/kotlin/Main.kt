@@ -1,7 +1,4 @@
-import medium.DeleteCost
-import medium.WordDistance
-import hard.DistinctSubsequences
-
+import medium.CountCollision
 /** Author temur.navoi
  *  Created on 3/26/21 21:01
  */
@@ -9,6 +6,5 @@ import hard.DistinctSubsequences
 
 fun main() {
 
-    println(DistinctSubsequences().numDistinct("babgbag", "bag"))
-    println(DistinctSubsequences().numDistinct("rabbbit", "rabbit"))
+    println(CountCollision().countCollisions("RLRSLL"))
 }
